@@ -12,10 +12,7 @@ public:
 	Player();
 	static Player& get();
 
-	// The member is a pointer,
-	// so its possible that the path accidently be released
-	// like the tape suddenly break. If this happened,
-	// the play function return false;
+	// If stopped by human, return false
 	bool play();
 
 	// If another path is not unloaded, 

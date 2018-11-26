@@ -16,4 +16,6 @@ namespace FakeClick {
 	struct Path {
 		FakeClick::Vector<Frame> frames;
 	};
+
+	bool Save(Path &path, String &file_path);
 }

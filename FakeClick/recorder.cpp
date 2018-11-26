@@ -48,7 +48,7 @@ bool Recorder::record()
 
 		HID::get().get_mouse_position(tmp_frame.position);
 		// Thanks, Windows
-		// In MOUSE_INPUT structure, 
+		// In MOUSE_INPUT fucking structure, 
 		// the screen is mapped to a scale from 0 to 65535 in both axis.
 		tmp_frame.position.x = ((tmp_frame.position.x << 16) - 1) / GetSystemMetrics(SM_CXSCREEN);
 		tmp_frame.position.y = ((tmp_frame.position.y << 16) - 1) / GetSystemMetrics(SM_CYSCREEN);

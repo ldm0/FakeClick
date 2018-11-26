@@ -13,10 +13,6 @@ public:
 	Recorder();
 	static Recorder& get();
 
-	// Like the player, The member is a pointer,
-	// so its possible that the path accidently be released.
-	// Like the tape suddenly break. If this happened,
-	// the record function return false.
 	bool record();
 
 	// If another path is not unloaded, 

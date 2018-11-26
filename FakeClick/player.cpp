@@ -25,8 +25,10 @@ bool Player::play()
 	mouse_input.mi.time = 0;
 	LOG("start play");
 	for (Vector<Frame>::iterator it = path_ptr->frames.begin();
-		 it != path_ptr->frames.end() && !(HID::get().b_key_down(VK_SPACE));
+		 it != path_ptr->frames.end();
 		 ++it) {
+		if (HID::get().b_key_down(VK_SPACE))
+			return false;
 		// SetCursorPos(it->position.x, it->position.y);
 		// Windows stupid coordinates
 		mouse_input.mi.dx = it->position.x;

@@ -15,5 +15,6 @@ int main()
 	std::cin.get();
 	Player::get().load(path);
 	std::cin.get();
-	Player::get().play();
+	for (int i = 0; i < 3; ++i)
+		Player::get().play();
 }
