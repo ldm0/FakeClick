@@ -201,7 +201,7 @@ namespace FakeClick {
 	inline void Vector<T>::clear()
 	{
 		for (; m_top >= 0; --m_top)
-			m_data->~T();
+			m_data[m_top].~T();
 	}
 
 	template<typename T>
