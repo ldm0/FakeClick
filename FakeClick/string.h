@@ -2,10 +2,6 @@
 
 #include<iostream>
 
-// Tips:
-// the size of m_data is always one more than the m_capacity (for \0
-// Every time the m_data was operator newed should be memset to zero 
-// or the string will go wrong
 namespace FakeClick{
 	class String {
 		int m_capacity;
@@ -28,8 +24,6 @@ namespace FakeClick{
 		String& operator=(const char *c_string);
 
 		String& operator+=(const String &string);
-
-		String& operator+=(const char *string);
 
 		String operator+(const String &string) const;
 
