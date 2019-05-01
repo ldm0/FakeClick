@@ -24,6 +24,7 @@ namespace FakeClick {
 		static HID& get();
 
 		bool b_key_down(int virtual_key_code);
+		bool b_key_toggle(int virtual_key_code);
 
 		POINT get_mouse_position(void);
 		void get_mouse_position(POINT &position);

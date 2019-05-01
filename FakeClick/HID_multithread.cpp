@@ -5,7 +5,7 @@
 using namespace FakeClick;
 
 //C style function, so use ExitThread is just fine
-//No class member is tolorated!
+//No class member is tolerated!
 DWORD WINAPI FakeClick::main_thread(LPVOID input)
 {
 	HID &instance = *(HID *)input;
@@ -58,9 +58,16 @@ HID & HID::get()
 
 bool HID::b_key_down(int virtual_key_code)
 {
-	if (!!(virtual_key_code & (~0xff)))
+	if (!!(virtual_key_code & (~(int)0xff)))
 		__debugbreak();
 	return !!(key_state[virtual_key_code] & 0x8000);
+}
+
+bool HID::b_key_toggle(int virtual_key_code)
+{
+	if (!!(virtual_key_code & (~(int)0xff)))
+		__debugbreak();
+	return !!(key_state[virtual_key_code] & 0x1);
 }
 
 POINT HID::get_mouse_position(void)
